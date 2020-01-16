@@ -11,15 +11,9 @@
     ]
   },
   "scripts": {
-    "precommit:server": "yarn workspace server precommit",
-    "precommit:client": "yarn workspace client precommit",
-    "precommit": "run-p precommit:server precommit:client",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,scss,css,md}\""
+    
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.2.0",
-    "@commitlint/config-conventional": "^8.2.0",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^1.19.1"
+    "npm-run-all": "^4.1.5"
   }
 }
