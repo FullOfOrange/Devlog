@@ -5,12 +5,14 @@
   "license": "MIT",
   "scripts": {
     "build": "next build",
-    "start": "node --experimental-modules bin/www.mjs"
+    "start": "node --experimental-modules bin/www.mjs",
+    "env:dev": "docker-compose -f build/develop/docker-compose.yml"
   },
   "dependencies": {
     "axios": "^0.19.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "mongoose": "^5.8.9",
     "next": "^9.2.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
