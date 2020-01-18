@@ -10,10 +10,8 @@ const Post = props => (
 );
 
 Post.getInitialProps = async function(context) {
-  console.log(context);
-  const { id } = context.qurey;
-  console.log(id);
-
+  const { id } = context.query;
+  
   const res = await axios.get(`https://api.tvmaze.com/shows/${id}`);
   const show = res.data;
   console.log(`Fetched show: ${show.name}`);
