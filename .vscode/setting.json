@@ -1,0 +1,20 @@
+{
+  "go.gopath": "${workspaceRoot}/server",  
+  "go.inferGopath": true,
+  "go.useLanguageServer": true,
+  "go.languageServerExperimentalFeatures": {
+    "documentLink": false
+  },
+  "[go]": {
+    "editor.snippetSuggestions": "none",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "gopls": {
+    "usePlaceholders": true,
+    "completeUnimported": true,
+    "deepCompletion": true
+  }
+}
