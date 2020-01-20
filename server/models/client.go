@@ -10,6 +10,7 @@ import (
 )
 
 // 전역객체라 동일 패키지 내에서는 쓰일수 있음.
+// db 와 collection 은 Init 이후에 사용가능.
 var dbName = "blog_db"
 var db *mongo.Database
 var collectionName = "posts"
