@@ -41,10 +41,12 @@ func FindAllPost() ([]Post, error) {
 	var result []Post
 	for cur.Next(context.Background()) {
 		var temp Post
+		
 		err := cur.Decode(&temp)
 		if err != nil {
 			return nil, err
 		}
+
 		result = append(result, temp)
 	}
 	if err := cur.Err(); err != nil {
