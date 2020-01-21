@@ -19,11 +19,10 @@ func GetPostByID(c *gin.Context) {
 	c.JSON(http.StatusOK, post)
 }
 
-
 // GetPosts parse all blog posts
 func GetPosts(c *gin.Context) {
 	posts, err := models.FindAllPost()
-	
+
 	if err != nil {
 		c.String(http.StatusInternalServerError, "database parse errror")
 	}
