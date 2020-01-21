@@ -3,20 +3,17 @@ import axios from "axios";
 
 const Post = props => (
   <Layout>
-    <h1>{props.show.name}</h1>
-    <p>{props.show.summary.replace(/<[/]?[pb]>/g, "")}</p>
-    {props.show.image ? <img src={props.show.image.medium} /> : null}
+    <h1>{props.post.Title}</h1>
   </Layout>
 );
 
 Post.getInitialProps = async function(context) {
   const { id } = context.query;
   
-  const res = await axios.get(`https://api.tvmaze.com/shows/${id}`);
-  const show = res.data;
-  console.log(`Fetched show: ${show.name}`);
+  const res = await axios.get(`http://localhost:8080/api/v1/posts/${id}`);
+  const post = res.data;
 
-  return { show };
+  return { post };
 };
 
 export default Post;

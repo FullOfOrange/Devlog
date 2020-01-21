@@ -7,14 +7,15 @@ import axios from "axios";
 // 자세한 라우팅은 https://nextjs.org/docs/routing/dynamic-routes 이곳에
 
 const Index = props => {
+  console.log(props.posts);
   return (
     <Layout>
       <h1>My Blog</h1>
       <ul>
-        {props.shows.map(show => (
-          <li key={show.id}>
-            <Link href="/posts/[id]" as={`/posts/${show.id}`}>
-              <a>{show.name}</a>
+        {props.posts.map(post => (
+          <li key={post.ID}>
+            <Link href="/posts/[id]" as={`/posts/${post.ID}`}>
+              <a>{post.Title}</a>
             </Link>
           </li>
         ))}
@@ -24,12 +25,13 @@ const Index = props => {
 };
 // 기본 함수로써 최초에 데이터를 불러오는 함수임
 Index.getInitialProps = async function() {
-  const res = await axios.get("https://api.tvmaze.com/search/shows?q=batman");
+  const res = await axios.get("http://localhost:8080/api/v1/posts");
+
 
   console.log(`Show data fetched. Count: ${res.data.length}`);
-
+  console.log(res.data)
   return {
-    shows: res.data.map(entry => entry.show)
+    posts: res.data
   };
 };
 export default Index;
