@@ -11,10 +11,10 @@ import (
 type Post struct {
 	ID         string
 	Title      string
-	desc       string
-	content    []byte
-	createDate string
-	updateDate string
+	Desc       string
+	Body       []byte
+	CreateDate string
+	UpdateDate string
 }
 
 // CreatePost creates post
