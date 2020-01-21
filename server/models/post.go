@@ -27,8 +27,8 @@ func CreatePost(post *Post) (string, error) {
 	if oid, ok := result.InsertedID.(primitive.ObjectID); ok {
 		return oid.Hex(), nil
 	}
-	err.Error("nothing to change")
-	return "", err
+	// 이부분 에러처리 어떻게 할지 생각해보자.
+	return "", nil
 }
 
 // FindAllPost find my entire posts
@@ -40,13 +40,18 @@ func FindAllPost() ([]Post, error) {
 
 	var result []Post
 	for cur.Next(context.Background()) {
-		var temp Post
-		
-		err := cur.Decode(&temp)
+		elem := &bson.D{}
+
+		err := cur.Decode(&elem)
 		if err != nil {
 			return nil, err
 		}
 
+		m := elem.Map()
+		temp := Post{
+			ID:    m["_id"].(primitive.ObjectID).Hex(),
+			Title: m["title"].(string),
+		}
 		result = append(result, temp)
 	}
 	if err := cur.Err(); err != nil {
@@ -63,7 +68,6 @@ func FindPostByObjectID(id string) (Post, error) {
 	if err != nil {
 		return Post{}, err
 	}
-
 	filter := bson.M{"_id": docID}
 	var result Post
 
