@@ -9,11 +9,13 @@ import (
 // SetupRouter 는 라우터 세팅용임.
 func SetupRouter() *gin.Engine {
 	r := gin.Default()
-
+	apiv1 := r.Group("/api/v1")
 	// API server health checking
-	r.GET("/ping", v1.HealthCheck)
+	apiv1.GET("/ping", v1.HealthCheck)
 
-	r.GET("/posts", v1.GetPosts)
+	apiv1.GET("/posts", v1.GetPosts)
+
+	apiv1.GET("/posts/:id", v1.GetPostByID)
 
 
 	return r
