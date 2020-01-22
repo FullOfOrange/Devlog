@@ -27,11 +27,8 @@ const Index = props => {
 Index.getInitialProps = async function() {
   const res = await axios.get("http://localhost:8080/api/v1/posts");
 
-
-  console.log(`Show data fetched. Count: ${res.data.length}`);
-  console.log(res.data)
   return {
-    posts: res.data
+    posts: res.data? res.data: []
   };
 };
 export default Index;
