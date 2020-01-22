@@ -7,6 +7,7 @@ require (
 	github.com/gin-gonic/gin v1.5.0
 	github.com/go-stack/stack v1.8.0 // indirect
 	github.com/golang/snappy v0.0.1 // indirect
+	github.com/gomarkdown/markdown v0.0.0-20200112043221-ec51d717629d
 	github.com/google/go-cmp v0.4.0 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/tidwall/pretty v1.0.0 // indirect

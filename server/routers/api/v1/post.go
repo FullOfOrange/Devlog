@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"github.com/FullOfOrange/devlog-server/models"
+	"github.com/gomarkdown/markdown"
 	"github.com/gin-gonic/gin"
 )
 
