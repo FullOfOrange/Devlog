@@ -1,19 +1,36 @@
 {
-  "name": "client",
+  "name": "foorgdevlog",
   "version": "1.0.0",
+  "description": "### How to Start",
   "main": "index.js",
-  "license": "MIT",
+  "directories": {
+    "doc": "docs"
+  },
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next",
     "build": "next build",
-    "start": "next start",
-    "export": "next export"
+    "start": "next start"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FullOfOrange/foorgdevlog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FullOfOrange/foorgdevlog/issues"
+  },
+  "homepage": "https://github.com/FullOfOrange/foorgdevlog#readme",
   "dependencies": {
-    "axios": "^0.19.1",
-    "dotenv": "^8.2.0",
-    "next": "^9.2.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "next": "^9.3.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^13.9.5",
+    "@types/react": "^16.9.27",
+    "typescript": "^3.8.3"
   }
 }

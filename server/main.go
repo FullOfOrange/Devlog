@@ -1,13 +1,13 @@
 package main
 
 import (
-	"github.com/FullOfOrange/devlog-server/models"
-	"github.com/FullOfOrange/devlog-server/routers"
+	"github.com/FullOfOrange/devlog/router"
+	"github.com/FullOfOrange/devlog/model"
 )
 
 func main() {
-	models.InitDB()
+	model.InitDB();
+	r := router.InitRouter();
 
-	r := routers.SetupRouter()
-	r.Run(":8080")
+	r.Run(":8080");
 }
