@@ -1,6 +1,9 @@
 # Customs
 out
+
+# Go
 .idea
+vendor
 
 # Logs
 logs
