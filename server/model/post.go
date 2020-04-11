@@ -12,12 +12,13 @@ type Post struct {
 	Contents *string
 }
 
-func GetPosts() *[]Post {
+func GetPosts() (*[]Post, error) {
 	var post []Post
-	if err := database.Find(&post).Error; err != nil {
-		log.Fatal(err)
+	err := database.Find(&post)
+	if err != nil {
+		return nil, err.Error
 	}
-	log.Print(post)
 
-	return &post
+	return &post, nil
+}
 }
