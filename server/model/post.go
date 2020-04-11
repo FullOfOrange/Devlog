@@ -21,4 +21,15 @@ func GetPosts() (*[]Post, error) {
 
 	return &post, nil
 }
+
+func GetPost(postId int) (*Post, error) {
+	var post Post
+	err := database.Find(&post)
+
+	if(err != nil || gorm.IsRecordNotFoundError(err.Error)){
+		return nil, err.Error
+	}
+
+	return &post, nil
+}
 }
