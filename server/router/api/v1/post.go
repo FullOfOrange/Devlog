@@ -1,4 +1,5 @@
 package v1
+
 import (
 	"github.com/FullOfOrange/devlog/model"
 	"github.com/gin-gonic/gin"

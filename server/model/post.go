@@ -12,27 +12,31 @@ type Post struct {
 	Contents *string
 }
 
-func GetPosts() (*[]Post, error) {
-	var post []Post
-	err := database.Find(&post)
-	if err != nil {
-		return nil, err.Error
-	}
+func GetPosts() ([]*Post, error) {
+	var posts []*Post
 
-	return &post, nil
+	err := postTable.Find(&posts).Error
+
+	log.Print(*posts[0]);
+	if err != nil && err == gorm.ErrRecordNotFound {
+		return nil, err
+	}
+	return posts, nil
 }
 
-func GetPost(postId int) (*Post, error) {
+func GetPostById(postId int) (*Post, error) {
 	var post Post
-	err := database.Find(&post)
 
-	if(err != nil || gorm.IsRecordNotFoundError(err.Error)){
-		return nil, err.Error
+	err := postTable.Where("id = ?", postId).First(&post).Error
+	if err != nil && err != gorm.ErrRecordNotFound {
+		return nil, err
 	}
-
 	return &post, nil
 }
 
-func CreatePost(post *Post) {
-	database.Create(&post)
+func CreatePost(post interface{}) error{
+	if err := postTable.Create(&post).Error; err != nil {
+		return err
+	}
+	return nil
 }
