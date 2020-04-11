@@ -8,7 +8,6 @@ import (
 )
 
 var database *gorm.DB
-var postTable *gorm.DB
 // DB 연결작업
 func InitDB() {
 	db, err := gorm.Open("mysql", "root:test@/devlog?charset=utf8mb4&parseTime=True&loc=Local")
@@ -18,5 +17,4 @@ func InitDB() {
 	}
 	// 전역변수에 DB내용을 담아
 	database = db
-	postTable = database.Table("post")
 }

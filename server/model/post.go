@@ -14,7 +14,7 @@ type Post struct {
 func GetPosts() ([]*Post, error) {
 	var posts []*Post
 
-	err := postTable.Find(&posts).Error
+	err := database.Find(&posts).Error
 	if err != nil || err != gorm.ErrRecordNotFound {
 		return nil, err
 	}
@@ -24,7 +24,7 @@ func GetPosts() ([]*Post, error) {
 func GetPostById(postId int) (*Post, error) {
 	var post Post
 
-	err := postTable.Where("id = ?", postId).First(&post).Error
+	err := database.Where("id = ?", postId).First(&post).Error
 	if err != nil || err != gorm.ErrRecordNotFound {
 		return nil, err
 	}
@@ -32,7 +32,7 @@ func GetPostById(postId int) (*Post, error) {
 }
 
 func CreatePost(post interface{}) error{
-	if err := postTable.Create(&post).Error; err != nil {
+	if err := database.Create(&post).Error; err != nil {
 		return err
 	}
 	return nil
