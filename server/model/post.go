@@ -2,6 +2,7 @@ package model
 
 import (
 	"github.com/jinzhu/gorm"
+	"log"
 )
 
 type Post struct {
@@ -14,8 +15,10 @@ type Post struct {
 func GetPosts() ([]*Post, error) {
 	var posts []*Post
 
-	err := database.Find(&posts).Error
-	if err != nil || err != gorm.ErrRecordNotFound {
+	err := postTable.Find(&posts).Error
+
+	log.Print(*posts[0]);
+	if err != nil && err == gorm.ErrRecordNotFound {
 		return nil, err
 	}
 	return posts, nil
@@ -24,15 +27,15 @@ func GetPosts() ([]*Post, error) {
 func GetPostById(postId int) (*Post, error) {
 	var post Post
 
-	err := database.Where("id = ?", postId).First(&post).Error
-	if err != nil || err != gorm.ErrRecordNotFound {
+	err := postTable.Where("id = ?", postId).First(&post).Error
+	if err != nil && err != gorm.ErrRecordNotFound {
 		return nil, err
 	}
 	return &post, nil
 }
 
 func CreatePost(post interface{}) error{
-	if err := database.Create(&post).Error; err != nil {
+	if err := postTable.Create(&post).Error; err != nil {
 		return err
 	}
 	return nil
