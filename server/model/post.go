@@ -32,4 +32,7 @@ func GetPost(postId int) (*Post, error) {
 
 	return &post, nil
 }
+
+func CreatePost(post *Post) {
+	database.Create(&post)
 }
