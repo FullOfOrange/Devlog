@@ -6,10 +6,14 @@ import (
 )
 
 type Post struct {
-	gorm.Model
 	Title string `gorm:"size:255;not null"`
 	Author string `gorm:"size:255;not null"`
 	Contents *string
+}
+
+type PostModel struct {
+	gorm.Model
+	Post
 }
 
 func GetPosts() ([]*Post, error) {
