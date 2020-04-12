@@ -2,7 +2,6 @@ package model
 
 import (
 	"github.com/jinzhu/gorm"
-	"log"
 )
 
 type Post struct {
@@ -20,8 +19,6 @@ func GetPosts() ([]*Post, error) {
 	var posts []*Post
 
 	err := postTable.Find(&posts).Error
-
-	log.Print(*posts[0]);
 	if err != nil && err == gorm.ErrRecordNotFound {
 		return nil, err
 	}
