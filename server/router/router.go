@@ -11,6 +11,7 @@ func InitRouter() *gin.Engine {
 
 	apiv1 := route.Group("/api/v1")
 	apiv1.GET("/posts", v1.GetPosts)
+	apiv1.GET("/post/:id", v1.GetPostById)
 
 	return route
 }
