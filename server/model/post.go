@@ -31,6 +31,8 @@ func GetPostById(postId int) (*Post, error) {
 	err := postTable.Where("id = ?", postId).First(&post).Error
 	if err != nil && err != gorm.ErrRecordNotFound {
 		return nil, err
+	} else if err == gorm.ErrRecordNotFound {
+		return nil, nil
 	}
 	return &post, nil
 }
