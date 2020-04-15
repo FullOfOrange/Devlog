@@ -1,17 +1,19 @@
 import React from "react";
-import styled from "styled-components";
+import * as S from "./style";
 
-import {Post} from "../../types"
+import { Post } from "../../types";
 
-const Card = (props: { post: Post }): React.ReactElement => {
-  const Card = styled.div``;
-  const post = props.post
+const Card = ({ post }: { post: Post }): React.ReactElement => {
+  const date = new Date(post.createAt);
+
   return (
-    <Card>
-      <h1>{post.title}</h1>
+    <S.Card>
+      <S.Title>{post.title}</S.Title>
+      <p>{`${date.getFullYear()}. ${date.getMonth() +
+        1}. ${date.getDate()}`}</p>
       <p>{post.contents}</p>
       <p>{post.author}</p>
-    </Card>
+    </S.Card>
   );
 };
 export default Card;
