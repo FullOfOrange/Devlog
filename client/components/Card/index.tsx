@@ -9,10 +9,10 @@ const Card = ({ post }: { post: Post }): React.ReactElement => {
   return (
     <S.Card>
       <S.Title>{post.title}</S.Title>
-      <p>{`${date.getFullYear()}. ${date.getMonth() +
-        1}. ${date.getDate()}`}</p>
-      <p>{post.contents}</p>
-      <p>{post.author}</p>
+      <S.Contents>{post.contents}</S.Contents>
+      <S.Date>{`${date.getFullYear()}년 ${date.getMonth() +
+        1}월 ${date.getDate()}일`}</S.Date>
+      <S.Author>by {post.author}</S.Author>
     </S.Card>
   );
 };
