@@ -1,6 +1,7 @@
 import { NextPage } from "next";
-import Card from "../components/Card";
-import {Post} from "../types"
+
+import { Card } from "../components";
+import { Post } from "../types";
 
 interface initPosts {
   posts: Array<Post>;
@@ -9,13 +10,9 @@ interface initPosts {
 const Home: NextPage<initPosts> = ({ posts }) => {
   return (
     <div>
-      {posts.map(post => {
-        return (
-          <Card
-            post={post}
-          />
-        );
-      })}
+      {posts.map(post => (
+        <Card key={post.id} post={post} />
+      ))}
     </div>
   );
 };
@@ -25,14 +22,18 @@ Home.getInitialProps = async () => {
   return {
     posts: [
       {
+        id: 0,
         title: "안녕",
         author: "안녕",
-        contents: "방가방가"
+        contents: "방가방가",
+        createAt: Date.now()
       },
       {
+        id: 1,
         title: "안녕",
         author: "안녕",
-        contents: "방가방가"
+        contents: "방가방가",
+        createAt: Date.now()
       }
     ]
   };
