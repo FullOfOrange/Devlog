@@ -1,19 +1,18 @@
 import styled from "styled-components";
 import { mediaQuery } from "../../common/media";
-import { size } from "../../common/constant";
+import { screenSize, tabSize } from "../../common/constant";
 
 export const CardGridContainer = styled.div`
-  width: ${size.large}px;
-  margin-left: auto;
-  margin-right: auto;
+  width: ${tabSize.large}px;
+  margin: 0 auto;
 
-  ${mediaQuery(1440)} {
-    width: ${size.middle}px;
+  ${mediaQuery(screenSize.large)} {
+    width: ${tabSize.middle}px;
   }
-  ${mediaQuery(1120)} {
-    width: ${size.small - 32}px;
+  ${mediaQuery(screenSize.middle)} {
+    width: ${tabSize.small - 32}px;
   }
-  ${mediaQuery(size.small)} {
+  ${mediaQuery(tabSize.small)} {
     width: calc(100% - 2rem);
   }
 `;

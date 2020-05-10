@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { mediaQuery } from "../../common/media";
-import { size } from "../../common/constant";
+import { screenSize, tabSize } from "../../common/constant";
 
 export const HeaderContainer = styled.div`
   margin: 0;
@@ -12,18 +12,15 @@ export const HeaderContainer = styled.div`
 export const Container = styled.div`
   display: flex;
   margin: 0 auto;
+  width: ${tabSize.large}px;
 
-  width: ${size.large}px;
-  margin-left: auto;
-  margin-right: auto;
-
-  ${mediaQuery(1440)} {
-    width: ${size.middle}px;
+  ${mediaQuery(screenSize.large)} {
+    width: ${tabSize.middle}px;
   }
-  ${mediaQuery(1120)} {
-    width: ${size.small - 32}px;
+  ${mediaQuery(screenSize.middle)} {
+    width: ${tabSize.small - 32}px;
   }
-  ${mediaQuery(size.small)} {
+  ${mediaQuery(tabSize.small)} {
     width: calc(100% - 2rem);
   }
 `;
