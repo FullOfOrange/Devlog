@@ -12,7 +12,7 @@ export const Card = styled.div`
 `;
 
 export const Title = styled.h4`
-  font-size: 1.875rem;
+  font-size: 1.2rem;
   line-height: 1.5;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -25,9 +25,9 @@ export const Title = styled.h4`
 export const Contents = styled.p`
   word-break: break-word;
   overflow-wrap: break-word;
-  font-size: 1.125rem;
-  line-height: 1.5;
-  height: 3.9375rem;
+  font-size: 1rem;
+  line-height: 1.45;
+  height: 4rem;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -38,14 +38,14 @@ export const Contents = styled.p`
 `;
 
 export const Date = styled.p`
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   line-height: 1.5;
   color: rgb(134, 142, 150);
   margin: 0;
 `;
 
 export const Author = styled.p`
-  font-size: 1rem;
+  font-size: 0.875rem;
   line-height: 1.5;
   margin: 0;
 `;
