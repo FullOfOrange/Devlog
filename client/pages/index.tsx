@@ -35,14 +35,14 @@ Home.getInitialProps = async () => {
         createAt: Date.now()
       },
       {
-        id: 1,
+        id: 2,
         title: "안녕",
         author: "안녕",
         contents,
         createAt: Date.now()
       },
       {
-        id: 1,
+        id: 3,
         title: "안녕",
         author: "안녕",
         contents,
