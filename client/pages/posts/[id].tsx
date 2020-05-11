@@ -1,22 +1,12 @@
 import { NextPage } from "next";
-import styled from "styled-components"
 
-import { Post } from '../../types'
+import { Post } from "../../types";
 
-const Posts: NextPage<{ props: { post: Post | undefined } }> = ({ props: { post } }) => {
-  return <>
-    {post}
-  </>;
+const Posts: NextPage<{ props: { post: Post | undefined } }> = ({
+  props: { post },
+}) => {
+  return <>{post? <div>{post.id}</div> : <p>not found</p>}</>;
 };
-
-const getPost = (id: number): Promise<Post | undefined> =>
-  new Promise((resolve, reject) => {
-    let post = undefined;
-    if (id === -1 || id >= posts.length) {
-      post = posts[id];
-    }
-    resolve(post);
-  });
 
 Posts.getInitialProps = async ({ query }) => {
   let id = -1;
@@ -25,6 +15,13 @@ Posts.getInitialProps = async ({ query }) => {
   let post = await getPost(id);
   return { props: { post } };
 };
+
+const getPost = (id: number): Promise<Post | undefined> =>
+  new Promise((resolve, reject) => {
+    let post = undefined;
+    if (id !== -1 || id < posts.length) post = posts[id];
+    resolve(post);
+  });
 
 const contents =
   "방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가방가";
@@ -86,4 +83,4 @@ const posts = [
     createAt: Date.now(),
   },
 ];
-export default Post;
+export default Posts;
