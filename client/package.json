@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/FullOfOrange/foorgdevlog#readme",
   "dependencies": {
+    "axios": "^0.19.2",
     "highlight.js": "^10.0.2",
     "markdown-it": "^10.0.0",
     "next": "^9.3.2",
@@ -32,6 +33,7 @@
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/highlight.js": "^9.12.3",
     "@types/markdown-it": "^10.0.1",
     "@types/marked": "^0.7.4",
