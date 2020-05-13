@@ -13,7 +13,7 @@ const PostContents = ({
   return (
     <>
       <S.ContentsContainer>
-        <div dangerouslySetInnerHTML={{ __html: md.render(contents) }} />
+        <S.Contents dangerouslySetInnerHTML={{ __html: md.render(contents) }} />
       </S.ContentsContainer>
     </>
   );
