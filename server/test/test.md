@@ -43,8 +43,10 @@ Pretty neat, eh?
 
 ## More info?
 
-Read usage information and more on [GitHub](//github.com/rexxars/react-markdown)
+**Read usage** information and more on [GitHub](//github.com/rexxars/react-markdown)
 
 ---------------
+
+![](https://media.vlpt.us/images/hax0r/post/62ee96f4-13fa-41fc-81c8-3cff3cd40d00/tetris-same-thing.jpg)
 
 A component by [Espen Hovlandsdal](https://espen.codes/)
