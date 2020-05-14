@@ -11,9 +11,8 @@ Changes are automatically rendered as you type.
 
 ### HTML block below
 
-<blockquote>
-  This blockquote will change based on the HTML settings above.
-</blockquote>
+>  This blockquote will change based on the HTML settings above.
+
 #### How about some code?
 
 ```js
