@@ -2,17 +2,21 @@ package model
 
 import (
 	"github.com/jinzhu/gorm"
+	"time"
 )
 
 type Post struct {
-	Title string `gorm:"size:255;not null"`
-	Author string `gorm:"size:255;not null"`
-	Contents *string
+	ID        uint `gorm:"primary_key" json:"id"`
+	CreatedAt time.Time `json:"createdAt"`
+	Title string `gorm:"size:255;not null" json:"title"`
+	Author string `gorm:"size:255;not null" json:"author"`
+	Contents *string `json:"contents"`
 }
 
 type PostModel struct {
-	gorm.Model
 	Post
+	UpdatedAt time.Time
+	DeletedAt *time.Time `sql:"index"`
 }
 
 func GetPosts() ([]*Post, error) {

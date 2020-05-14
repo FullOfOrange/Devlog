@@ -3,25 +3,18 @@ package v1
 import (
 	"github.com/FullOfOrange/devlog/model"
 	"github.com/gin-gonic/gin"
-	"log"
-	"strconv"
 
+	"strconv"
 	"io/ioutil"
 )
 
-type Test struct {
-	data string `json:"data"`
-}
-
 func GetPostTest(c *gin.Context) {
-	dat, err := ioutil.ReadFile("./test/test.md")
+	dat, err := ioutil.ReadFile("./test/test3.md")
 	if err != nil {
 		c.AbortWithStatus(500)
 		return
 	}
-	var d = Test {string(dat)}
-	log.Print(d.data)
-	c.JSON(200, d)
+	c.JSON(200, string(dat))
 }
 
 func GetPosts(c *gin.Context) {
