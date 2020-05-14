@@ -1,34 +1,4 @@
 import styled from "styled-components";
-import { mediaQuery } from "../../common/media";
-import { tabSize, screenSize } from "../../common/constant";
-
-export const ContentsContainer = styled.div`
-  margin: 0px;
-  padding: 0px;
-  height: auto;
-  bottom: 0px;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  font-size: 1rem;
-  line-height: 1.42857143;
-  overflow-x: hidden;
-  background-image: inherit;
-  background-size: inherit;
-  background-attachment: inherit;
-  background-origin: inherit;
-  background-clip: inherit;
-  background-color: inherit;
-  tab-size: 4;
-  background-position: inherit inherit;
-  background-repeat: inherit inherit;
-  width: ${tabSize.middle - 32}px;
-  margin: 0 auto;
-
-  ${mediaQuery(tabSize.middle)} {
-    width: calc(100% - 2rem);
-  }
-`;
 
 export const Contents = styled.div`
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",

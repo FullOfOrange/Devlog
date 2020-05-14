@@ -11,9 +11,7 @@ const PostContents = ({
 }): React.ReactElement => {
   return (
     <>
-      <S.ContentsContainer>
-        <S.Contents dangerouslySetInnerHTML={{ __html: md.render(contents) }} />
-      </S.ContentsContainer>
+      <S.Contents dangerouslySetInnerHTML={{ __html: md.render(contents) }} />
     </>
   );
 };
