@@ -9,7 +9,6 @@ const PostContents = ({
 }: {
   contents: string;
 }): React.ReactElement => {
-  console.log(contents);
   return (
     <>
       <S.ContentsContainer>
