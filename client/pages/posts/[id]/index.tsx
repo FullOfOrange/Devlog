@@ -3,10 +3,16 @@ import axios from "axios";
 
 import * as API from "../../../common/api";
 import { Post } from "../../../types";
+import { Header } from "../../../components";
 import PostContainer from "../../../containers/PostContainer";
 
 const Posts: NextPage<{ post: Post }> = ({ post }) => {
-  return <>{post ? <PostContainer post={post} /> : <p>not found</p>}</>;
+  return (
+    <>
+      <Header />
+      <PostContainer post={post} />
+    </>
+  );
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

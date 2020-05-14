@@ -7,6 +7,7 @@ export const HeaderContainer = styled.div`
   width: 100%;
   background: white;
   height: 4rem;
+  box-shadow: rgba(194, 194, 194, 0.3) 0px 2px;
 `;
 
 export const Container = styled.div`

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Card = styled.div`
+export const Card = styled.a`
   display: flex;
   flex-direction: column;
   margin: 1rem;
@@ -9,6 +9,8 @@ export const Card = styled.div`
   overflow: hidden;
   background: white;
   flex: 1 1 0%;
+  text-decoration: none;
+  box-shadow: rgba(194, 194, 194, 0.3) 0px 2px 4px 0px;
 `;
 
 export const Title = styled.h4`
@@ -48,4 +50,5 @@ export const Author = styled.p`
   font-size: 0.875rem;
   line-height: 1.5;
   margin: 0;
+  color: rgb(73, 80, 87);
 `;
