@@ -11,3 +11,11 @@ export const Container = styled.div`
     width: calc(100% - 2rem);
   }
 `;
+
+export const PostTitle = styled.h1`
+
+`
+
+export const PostCreateTime = styled.p`
+
+`;

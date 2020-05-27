@@ -7,12 +7,7 @@ import { Header } from "../../../components";
 import PostContainer from "../../../containers/PostContainer";
 
 const Posts: NextPage<{ post: Post }> = ({ post }) => {
-  return (
-    <>
-      <Header />
-      <PostContainer post={post} />
-    </>
-  );
+  return <PostContainer post={post} />;
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
