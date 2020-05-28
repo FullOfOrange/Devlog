@@ -1,5 +1,6 @@
 import React from "react";
 import { Header } from "../../components";
+import * as S from "./style";
 
 export default ({
   container,
@@ -9,7 +10,7 @@ export default ({
   return (
     <>
       <Header />
-      {container}
+      <S.Container>{container}</S.Container>
     </>
   );
 };
