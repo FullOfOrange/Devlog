@@ -1,0 +1,50 @@
+{
+  "name": "foorgdevlog",
+  "version": "1.0.0",
+  "description": "### How to Start",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "export": "next export",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FullOfOrange/foorgdevlog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FullOfOrange/foorgdevlog/issues"
+  },
+  "homepage": "https://github.com/FullOfOrange/foorgdevlog#readme",
+  "dependencies": {
+    "@babel/plugin-proposal-decorators": "^7.10.0",
+    "highlight.js": "^10.0.2",
+    "markdown-it": "^10.0.0",
+    "next": "^9.3.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "reflect-metadata": "^0.1.13",
+    "sequelize": "^5.21.11",
+    "sequelize-typescript": "^1.1.0",
+    "sqlite3": "^4.2.0",
+    "styled-components": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/highlight.js": "^9.12.3",
+    "@types/markdown-it": "^10.0.1",
+    "@types/marked": "^0.7.4",
+    "@types/node": "^13.9.5",
+    "@types/react": "^16.9.27",
+    "@types/sqlite3": "^3.1.6",
+    "@types/styled-components": "^5.0.1",
+    "typescript": "^3.8.3"
+  }
+}
