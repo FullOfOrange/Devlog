@@ -1,10 +1,3 @@
-# Custom
-out
-
-# Go
-.idea
-vendor
-
 # Logs
 logs
 *.log
