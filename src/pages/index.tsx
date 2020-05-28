@@ -1,19 +1,12 @@
 import { NextPage, GetStaticProps } from "next";
-import axios from "axios";
 
-import * as API from "../common/api";
-import { CardGrid, Header } from "../components";
+import MainContainer from "../containers/MainContainer";
 import { Post } from "../types";
 
 const Main: NextPage<{
   posts: Array<Post>;
 }> = ({ posts }) => {
-  return (
-    <>
-      <Header />
-      <CardGrid posts={posts} />
-    </>
-  );
+  return <MainContainer posts={posts} />;
 };
 
 export const getStaticProps: GetStaticProps = async () => {
