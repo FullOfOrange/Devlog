@@ -1,16 +1,19 @@
 import { NextPage, GetStaticProps, GetStaticPaths } from "next";
-import axios from "axios";
 
-import * as API from "../../../common/api";
-import { Post } from "../../../types";
-import { Header } from "../../../components";
 import PostContainer from "../../../containers/PostContainer";
+import { Post } from "../../../types";
+import { getPost, getPosts } from "../../../api/services";
 
-const Posts: NextPage<{ post: Post }> = ({ post }) => {
-  return <PostContainer post={post} />;
-};
+const Posts: NextPage<{ post: Post }> = ({ post }) => (
+  <PostContainer post={post} />
+);
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const getPostsPath = async (path: string): Promise<string[]> => {
+    let posts = await getPosts();
+    return posts.map((post) => `${path}/${post.id}`);
+  };
+
   return {
     paths: await getPostsPath("/posts"),
     fallback: false,
@@ -22,17 +25,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (params && typeof params.id === "string") id = parseInt(params.id);
   let post = await getPost(id);
   return { props: { post } };
-};
-
-const getPostsPath = async (path: string): Promise<string[]> => {
-  let req = await axios.get(API.POSTS);
-  let posts: Post[] = req.data;
-  return posts.map((post) => `${path}/${post.id}`);
-};
-
-const getPost = async (id: number): Promise<Post | Object> => {
-  let req = await axios.get(API.POST(id));
-  return req.data;
 };
 
 export default Posts;

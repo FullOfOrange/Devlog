@@ -2,6 +2,7 @@ import { NextPage, GetStaticProps } from "next";
 
 import MainContainer from "../containers/MainContainer";
 import { Post } from "../types";
+import { getPosts } from "../api/services";
 
 const Main: NextPage<{
   posts: Array<Post>;
@@ -10,9 +11,7 @@ const Main: NextPage<{
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  let req = await axios.get(API.POSTS);
-  let posts: Post[] = req.data;
-  
+  let posts = await getPosts();
   return { props: { posts } };
 };
 
